@@ -1,0 +1,378 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エム（紙上運用）</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f6f5f2;--surface:#ffffff;--line:#e4e2dc;--ink:#1a1a19;--ink-2:#55534e;--ink-3:#8a8880;
+  --accent:#2a78d6;--accent-soft:#e6f0fb;--good:#0ca30c;--bad:#d03b3b;--warn:#b7791f;
+  --hgb:#eef4fc;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121211;--surface:#1a1a19;--line:#33322f;--ink:#f0efec;--ink-2:#c3c2b7;--ink-3:#8f8e86;
+    --accent:#3987e5;--accent-soft:#1d2a3a;--good:#0ca30c;--bad:#e66767;--warn:#e0a23a;
+    --hgb:#1f2733;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121211;--surface:#1a1a19;--line:#33322f;--ink:#f0efec;--ink-2:#c3c2b7;--ink-3:#8f8e86;
+  --accent:#3987e5;--accent-soft:#1d2a3a;--good:#0ca30c;--bad:#e66767;--warn:#e0a23a;
+  --hgb:#1f2733;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
+main{max-width:960px;margin:0 auto;padding:16px 16px 48px}
+header{padding:8px 0 4px}
+h1{font-size:1.5rem;margin:0 0 4px;font-weight:700}
+h2{font-size:1.15rem;margin:28px 0 8px;font-weight:700;border-left:4px solid var(--accent);padding-left:10px}
+h3{font-size:1rem;margin:16px 0 6px;font-weight:600;color:var(--ink-2)}
+.meta{color:var(--ink-2);font-size:.9rem}
+.notice{margin:10px 0 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink-2);font-size:.9rem}
+.demo{margin:10px 0 0;padding:10px 12px;border-radius:8px;background:var(--accent-soft);color:var(--ink);font-size:.9rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;margin:8px 0}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{color:var(--ink-2);font-weight:600;font-size:.82rem}
+th:first-child,td:first-child{text-align:left}
+td.l,th.l{text-align:left}
+tr.hgb td{background:var(--hgb);font-weight:600}
+.buy{color:var(--ink);font-weight:700}
+.buy::before{content:"●";color:var(--accent);margin-right:4px;font-size:.7em;vertical-align:middle}
+.hold{color:var(--ink-3)}
+.up{color:var(--good)}
+.down{color:var(--bad)}
+.v-win{color:var(--good);font-weight:600}
+.v-lose{color:var(--bad);font-weight:600}
+.v-same{color:var(--ink-2)}
+.v-few{color:var(--ink-3)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:8px 0}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.tile .k{font-size:.78rem;color:var(--ink-2)}
+.tile .v{font-size:1.2rem;font-weight:700;margin-top:2px}
+.tile .s{font-size:.8rem;color:var(--ink-3)}
+.chart{width:100%;height:auto;display:block;margin-top:6px}
+.chart text{font-size:11px;fill:var(--ink-2)}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .series{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart .area{fill:var(--accent);opacity:.1}
+.chart .base{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:none}
+.chart .cursor{stroke:var(--ink-3);stroke-width:1;display:none}
+.chart .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2;display:none}
+.tip{font-size:.85rem;color:var(--ink-2);min-height:1.4em;margin-top:4px}
+.small{font-size:.82rem;color:var(--ink-3)}
+footer{margin-top:40px;color:var(--ink-3);font-size:.8rem}
+details summary{cursor:pointer;color:var(--ink-2);font-size:.9rem}
+/* 予約（翌営業日の寄り付きで買う）の小さな一覧 */
+.reserve{margin:10px 0 0;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);font-size:.9rem}
+.reserve .k{color:var(--ink-2);font-size:.8rem}
+.reserve ul{margin:2px 0 0;padding-left:1.2em}
+/* 見立ての表：スマホ幅でも 4 列が収まるように詰める */
+table.today{table-layout:fixed}
+table.today th,table.today td{padding:6px 4px}
+table.today th:first-child,table.today td:first-child{width:5.2em}
+table.today .hz{font-size:.78rem;line-height:1.3;white-space:normal}
+table.today .hz small{display:block;color:var(--ink-3);font-weight:400}
+table.today .hold{color:var(--ink-3);font-weight:400}
+/* 成績表：細い列はスマホ幅では隠し、「くわしく」で開く */
+table.scores td.x,table.scores th.x{display:none}
+table.scores.open td.x,table.scores.open th.x{display:table-cell}
+table.scores td.model{white-space:normal;font-size:.82rem;line-height:1.3}
+table.scores .v-long{display:none}
+/* 持ち株・予約の表：スマホ幅では 4 列（銘柄・物差し（短く）・株数・含み損益）。残りは「くわしく」で開く */
+table.pos td.x,table.pos th.x{display:none}
+table.pos.open td.x,table.pos.open th.x{display:table-cell}
+table.pos .hz-l{display:none}
+table.pos td.pend{color:var(--ink-2)}
+@media (min-width:700px){
+  table.scores td.x,table.scores th.x{display:table-cell}
+  table.scores .v-long{display:inline}
+  table.scores .v-short{display:none}
+  table.scores td.model{white-space:nowrap;font-size:.9rem}
+  table.pos td.x,table.pos th.x{display:table-cell}
+  table.pos .hz-l{display:inline}
+  table.pos .hz-s{display:none}
+  .toggle{display:none}
+}
+@media (min-width:700px) and (max-width:819px){
+  /* 全列を出す幅のうち狭いほう（iPad mini の縦など）：少し詰めて 7 列を収める */
+  table.pos{font-size:.84rem}
+  table.pos th,table.pos td{padding:6px 5px}
+}
+.toggle{background:none;border:1px solid var(--line);color:var(--ink-2);border-radius:6px;padding:2px 8px;font-size:.8rem;cursor:pointer;margin:0 0 6px}
+@media (max-width:430px){
+  main{padding:12px 10px 40px}
+  table{font-size:.86rem}
+  th,td{padding:6px 5px}
+  table.today th:first-child,table.today td:first-child{width:4.6em}
+  table.scores{font-size:.8rem}
+  table.scores th,table.scores td{padding:5px 3px}
+  table.scores td.model{font-size:.76rem}
+  table.recent{font-size:.8rem}
+  table.recent th,table.recent td{padding:5px 3px}
+}
+</style></head><body><main>
+<header>
+<h1>エム（紙上運用）</h1>
+<div class="meta">最終更新：2026-10-29 07:31 JST</div>
+<p class="notice">ここにあるのは仮想のお金の成績です。予測は保証ではありません。</p>
+<div class="reserve"><div class="k">予約（翌営業日の寄り付きで買う）</div><ul><li><b>NVDA</b> 短期（当日） 1 株（上がる確率 60%）<span class="small"> 2026-10-29 の寄り付き</span></li></ul></div>
+</header>
+<h2>今日の見立て</h2>
+<p class="small">上がる確率（機械学習 hgb）。55% 以上なら「買う」、未満は「見送り」。見立てはその日の大引けのあとに出し、翌営業日の寄り付きで入ります。</p>
+<h3>日本株 <span class="small">（2026-10-28 の引け時点）</span></h3>
+<div class="card"><table class="today"><thead><tr><th class="l">銘柄</th>
+<th class="hz">短期<small>当日</small></th>
+<th class="hz">中期<small>5営業日</small></th>
+<th class="hz">長期<small>20営業日</small></th>
+</tr></thead><tbody>
+<tr><td class="l">3861.T</td>
+<td><span class="hold" title="見送り">44%</span></td>
+<td><span class="buy">59% 買う</span></td>
+<td><span class="buy">58% 買う</span></td>
+</tr>
+<tr><td class="l">4005.T</td>
+<td><span class="hold" title="見送り">44%</span></td>
+<td><span class="buy">55% 買う</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+</tr>
+<tr><td class="l">4689.T</td>
+<td><span class="hold" title="見送り">46%</span></td>
+<td><span class="buy">58% 買う</span></td>
+<td><span class="buy">58% 買う</span></td>
+</tr>
+<tr><td class="l">4755.T</td>
+<td><span class="hold" title="見送り">42%</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+</tr>
+<tr><td class="l">4902.T</td>
+<td><span class="hold" title="見送り">45%</span></td>
+<td><span class="buy">60% 買う</span></td>
+<td><span class="hold" title="見送り">50%</span></td>
+</tr>
+<tr><td class="l">6366.T</td>
+<td><span class="hold" title="見送り">50%</span></td>
+<td><span class="hold" title="見送り">53%</span></td>
+<td><span class="hold" title="見送り">49%</span></td>
+</tr>
+<tr><td class="l">6471.T</td>
+<td><span class="hold" title="見送り">42%</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+<td><span class="hold" title="見送り">50%</span></td>
+</tr>
+<tr><td class="l">6472.T</td>
+<td><span class="hold" title="見送り">43%</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+<td><span class="hold" title="見送り">50%</span></td>
+</tr>
+<tr><td class="l">6753.T</td>
+<td><span class="hold" title="見送り">45%</span></td>
+<td><span class="buy">57% 買う</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+</tr>
+<tr><td class="l">7201.T</td>
+<td><span class="hold" title="見送り">44%</span></td>
+<td><span class="buy">56% 買う</span></td>
+<td><span class="hold" title="見送り">37%</span></td>
+</tr>
+<tr><td class="l">7211.T</td>
+<td><span class="hold" title="見送り">43%</span></td>
+<td><span class="buy">56% 買う</span></td>
+<td><span class="buy">56% 買う</span></td>
+</tr>
+<tr><td class="l">9432.T</td>
+<td><span class="hold" title="見送り">47%</span></td>
+<td><span class="buy">57% 買う</span></td>
+<td><span class="buy">57% 買う</span></td>
+</tr>
+<tr><td class="l">9434.T</td>
+<td><span class="hold" title="見送り">48%</span></td>
+<td><span class="buy">68% 買う</span></td>
+<td><span class="buy">58% 買う</span></td>
+</tr>
+<tr><td class="l">9501.T</td>
+<td><span class="hold" title="見送り">44%</span></td>
+<td><span class="buy">59% 買う</span></td>
+<td><span class="buy">58% 買う</span></td>
+</tr>
+</tbody></table>
+<p class="small">数字は上がる確率。「<span class="buy">買う</span>」の印が無いものは見送り。</p></div>
+<h3>米国株 <span class="small">（2026-10-28 の引け時点）</span></h3>
+<div class="card"><table class="today"><thead><tr><th class="l">銘柄</th>
+<th class="hz">短期<small>当日</small></th>
+<th class="hz">中期<small>5営業日</small></th>
+<th class="hz">長期<small>20営業日</small></th>
+</tr></thead><tbody>
+<tr><td class="l">AAPL</td>
+<td><span class="buy">55% 買う</span></td>
+<td><span class="buy">56% 買う</span></td>
+<td><span class="hold" title="見送り">55%</span></td>
+</tr>
+<tr><td class="l">AMZN</td>
+<td><span class="buy">58% 買う</span></td>
+<td><span class="buy">57% 買う</span></td>
+<td><span class="hold" title="見送り">52%</span></td>
+</tr>
+<tr><td class="l">BRK-B</td>
+<td><span class="buy">61% 買う</span></td>
+<td><span class="hold" title="見送り">45%</span></td>
+<td><span class="buy">56% 買う</span></td>
+</tr>
+<tr><td class="l">GOOGL</td>
+<td><span class="buy">58% 買う</span></td>
+<td><span class="buy">59% 買う</span></td>
+<td><span class="buy">60% 買う</span></td>
+</tr>
+<tr><td class="l">JPM</td>
+<td><span class="hold" title="見送り">53%</span></td>
+<td><span class="hold" title="見送り">52%</span></td>
+<td><span class="buy">69% 買う</span></td>
+</tr>
+<tr><td class="l">META</td>
+<td><span class="buy">65% 買う</span></td>
+<td><span class="buy">63% 買う</span></td>
+<td><span class="buy">67% 買う</span></td>
+</tr>
+<tr><td class="l">MSFT</td>
+<td><span class="hold" title="見送り">43%</span></td>
+<td><span class="buy">57% 買う</span></td>
+<td><span class="buy">56% 買う</span></td>
+</tr>
+<tr><td class="l">NVDA</td>
+<td><span class="buy">60% 買う</span></td>
+<td><span class="buy">60% 買う</span></td>
+<td><span class="buy">56% 買う</span></td>
+</tr>
+<tr><td class="l">TSLA</td>
+<td><span class="hold" title="見送り">53%</span></td>
+<td><span class="hold" title="見送り">47%</span></td>
+<td><span class="hold" title="見送り">42%</span></td>
+</tr>
+<tr><td class="l">XOM</td>
+<td><span class="hold" title="見送り">52%</span></td>
+<td><span class="hold" title="見送り">50%</span></td>
+<td><span class="hold" title="見送り">54%</span></td>
+</tr>
+</tbody></table>
+<p class="small">数字は上がる確率。「<span class="buy">買う</span>」の印が無いものは見送り。</p></div>
+<h2>成績表</h2>
+<p class="small">的中率＝上がる／下がるの向きが合った率。基準＝実際の上昇率（何もしない基準）。Brier＝確率の正確さ（小さいほど良い）。紙上損益＝元手に対する実現損益。指数＝同じ期間の指数の持ちっぱなし。</p>
+<h3>日本株</h3>
+<div class="card scroll"><button class="toggle" type="button" data-for="scores-jp">くわしく（Brier・買った数・指数…）</button><table class="scores" id="scores-jp"><thead><tr><th class="l">物差し</th><th class="l">モデル</th><th>n</th><th>的中率<small class="small">（基準）</small></th><th class="x">Brier</th><th class="x">買った数</th><th class="x">買いの的中</th><th class="x">平均リターン</th><th>紙上損益</th><th class="x">指数</th><th class="l">判定</th></tr></thead><tbody>
+<tr class="hgb"><td class="l">短期</td><td class="l model" title="機械学習（hgb）">機械学習</td><td>43</td><td>53.5%<small class="small">（32.6%）</small></td><td class="x">0.243</td><td class="x">1</td><td class="x">0.0%</td><td class="x">-3.48%</td><td class="">—</td><td class="x">+1.7%</td><td class="l verdict v-same" title="基準と変わらない"><span class="v-long">基準と変わらない</span><span class="v-short">同じ</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：上昇率そのまま">基準・上昇率</td><td>43</td><td>67.4%<small class="small">（32.6%）</small></td><td class="x">0.245</td><td class="x">0</td><td class="x">—</td><td class="x">—</td><td class="">—</td><td class="x">+1.7%</td><td class="l verdict v-few" title="これが基準"><span class="v-long">これが基準</span><span class="v-short">基準</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：順張り">基準・順張り</td><td>43</td><td>60.5%<small class="small">（32.6%）</small></td><td class="x">0.239</td><td class="x">5</td><td class="x">20.0%</td><td class="x">-1.25%</td><td class="">—</td><td class="x">+1.7%</td><td class="l verdict v-same" title="基準と変わらない"><span class="v-long">基準と変わらない</span><span class="v-short">同じ</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：逆張り">基準・逆張り</td><td>43</td><td>39.5%<small class="small">（32.6%）</small></td><td class="x">0.281</td><td class="x">38</td><td class="x">34.2%</td><td class="x">-0.44%</td><td class="">—</td><td class="x">+1.7%</td><td class="l verdict v-lose" title="基準に負けている"><span class="v-long">基準に負けている</span><span class="v-short">負け</span></td></tr>
+</tbody></table></div>
+<h3>米国株</h3>
+<div class="card scroll"><button class="toggle" type="button" data-for="scores-us">くわしく（Brier・買った数・指数…）</button><table class="scores" id="scores-us"><thead><tr><th class="l">物差し</th><th class="l">モデル</th><th>n</th><th>的中率<small class="small">（基準）</small></th><th class="x">Brier</th><th class="x">買った数</th><th class="x">買いの的中</th><th class="x">平均リターン</th><th>紙上損益</th><th class="x">指数</th><th class="l">判定</th></tr></thead><tbody>
+<tr class="hgb"><td class="l">短期</td><td class="l model" title="機械学習（hgb）">機械学習</td><td>40</td><td>55.0%<small class="small">（50.0%）</small></td><td class="x">0.260</td><td class="x">7</td><td class="x">42.9%</td><td class="x">+0.11%</td><td class="down">-0.4%</td><td class="x">+0.4%</td><td class="l verdict v-same" title="基準と変わらない"><span class="v-long">基準と変わらない</span><span class="v-short">同じ</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：上昇率そのまま">基準・上昇率</td><td>40</td><td>50.0%<small class="small">（50.0%）</small></td><td class="x">0.250</td><td class="x">0</td><td class="x">—</td><td class="x">—</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-few" title="これが基準"><span class="v-long">これが基準</span><span class="v-short">基準</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：順張り">基準・順張り</td><td>40</td><td>47.5%<small class="small">（50.0%）</small></td><td class="x">0.265</td><td class="x">19</td><td class="x">47.4%</td><td class="x">+0.06%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-same" title="基準と変わらない"><span class="v-long">基準と変わらない</span><span class="v-short">同じ</span></td></tr>
+<tr><td class="l">短期</td><td class="l model" title="基準：逆張り">基準・逆張り</td><td>40</td><td>52.5%<small class="small">（50.0%）</small></td><td class="x">0.255</td><td class="x">21</td><td class="x">52.4%</td><td class="x">+0.14%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-same" title="基準と変わらない"><span class="v-long">基準と変わらない</span><span class="v-short">同じ</span></td></tr>
+<tr class="hgb"><td class="l">中期</td><td class="l model" title="機械学習（hgb）">機械学習</td><td>10</td><td>40.0%<small class="small">（50.0%）</small></td><td class="x">0.274</td><td class="x">6</td><td class="x">33.3%</td><td class="x">-1.98%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-few" title="まだ数が足りない（n&lt;30）"><span class="v-long">まだ数が足りない（n&lt;30）</span><span class="v-short">まだ少ない</span></td></tr>
+<tr><td class="l">中期</td><td class="l model" title="基準：上昇率そのまま">基準・上昇率</td><td>10</td><td>50.0%<small class="small">（50.0%）</small></td><td class="x">0.253</td><td class="x">10</td><td class="x">50.0%</td><td class="x">-1.00%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-few" title="まだ数が足りない（n&lt;30）"><span class="v-long">まだ数が足りない（n&lt;30）</span><span class="v-short">まだ少ない</span></td></tr>
+<tr><td class="l">中期</td><td class="l model" title="基準：順張り">基準・順張り</td><td>10</td><td>50.0%<small class="small">（50.0%）</small></td><td class="x">0.260</td><td class="x">4</td><td class="x">50.0%</td><td class="x">-0.54%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-few" title="まだ数が足りない（n&lt;30）"><span class="v-long">まだ数が足りない（n&lt;30）</span><span class="v-short">まだ少ない</span></td></tr>
+<tr><td class="l">中期</td><td class="l model" title="基準：逆張り">基準・逆張り</td><td>10</td><td>50.0%<small class="small">（50.0%）</small></td><td class="x">0.260</td><td class="x">6</td><td class="x">50.0%</td><td class="x">-1.31%</td><td class="">—</td><td class="x">+0.4%</td><td class="l verdict v-few" title="まだ数が足りない（n&lt;30）"><span class="v-long">まだ数が足りない（n&lt;30）</span><span class="v-short">まだ少ない</span></td></tr>
+</tbody></table></div>
+<h2>紙上口座</h2>
+<h3>日本株</h3>
+<div class="tiles">
+<div class="tile"><div class="k">資産（現金＋持ち株）</div><div class="v">103,291 円</div><div class="s">元手 100,000 円</div></div>
+<div class="tile"><div class="k">現金</div><div class="v">841 円</div><div class="s">持ち株の評価額 102,450 円</div></div>
+<div class="tile"><div class="k">実現損益</div><div class="v ">0 円</div><div class="s">元手比 —</div></div>
+<div class="tile"><div class="k">取引の数</div><div class="v">0 回</div><div class="s">勝率 —</div></div>
+</div>
+<div class="card"><div class="small">資産の推移（グレーの横線が元手）。線の上をなぞると日付と金額が出ます。</div>
+<svg class="chart" viewBox="0 0 640 220" role="img" aria-label="資産の推移" data-chart="1" data-tip="tip-jp" data-points='[[56.0, 179.6, &quot;2026-10-23&quot;, &quot;100,000 円&quot;], [246.7, 160.7, &quot;2026-10-26&quot;, &quot;100,401 円&quot;], [437.3, 102.2, &quot;2026-10-27&quot;, &quot;101,641 円&quot;], [628.0, 24.4, &quot;2026-10-28&quot;, &quot;103,291 円&quot;]]'><line class="grid" x1="56" y1="192.0" x2="628" y2="192.0"/><text x="50" y="196.0" text-anchor="end">10万</text><line class="grid" x1="56" y1="132.0" x2="628" y2="132.0"/><text x="50" y="136.0" text-anchor="end">10万</text><line class="grid" x1="56" y1="72.0" x2="628" y2="72.0"/><text x="50" y="76.0" text-anchor="end">10万</text><line class="grid" x1="56" y1="12.0" x2="628" y2="12.0"/><text x="50" y="16.0" text-anchor="end">10万</text><line class="base" x1="56" y1="179.6" x2="628" y2="179.6"/><text x="628" y="175.6" text-anchor="end">元手</text><path class="area" d="M56.0,179.6 L246.7,160.7 L437.3,102.2 L628.0,24.4 L628.0,192.0 L56.0,192.0 Z"/><path class="series" d="M56.0,179.6 L246.7,160.7 L437.3,102.2 L628.0,24.4"/><text x="56.0" y="212" text-anchor="start">10-23</text><text x="437.3" y="212" text-anchor="middle">10-27</text><text x="628.0" y="212" text-anchor="end">10-28</text><line class="cursor" x1="0" y1="12" x2="0" y2="192"/><circle class="dot" r="4" cx="0" cy="0"/></svg>
+<div class="tip" id="tip-jp" data-default=""></div></div>
+<div class="card scroll"><button class="toggle" type="button" data-for="pos-jp">くわしく（入った日・入った値・いまの値）</button><table class="pos" id="pos-jp"><thead><tr><th class="l">銘柄</th><th class="l">物差し</th><th>株数</th><th class="x">入った日</th><th class="x">入った値</th><th class="x">いまの値</th><th>含み損益</th></tr></thead><tbody>
+<tr><td class="l">6471.T</td><td class="l"><span class="hz-s">中期</span><span class="hz-l">中期（5営業日）</span></td><td>100</td><td class="x">2026-10-26</td><td class="x">992 円</td><td class="x">1,024 円</td><td class="up">3,291 円</td></tr>
+</tbody></table></div>
+<h3>米国株</h3>
+<div class="tiles">
+<div class="tile"><div class="k">資産（現金＋持ち株）</div><div class="v">690.16 ドル</div><div class="s">元手 700.00 ドル</div></div>
+<div class="tile"><div class="k">現金</div><div class="v">285.94 ドル</div><div class="s">持ち株の評価額 404.22 ドル</div></div>
+<div class="tile"><div class="k">実現損益</div><div class="v down">-3.03 ドル</div><div class="s">元手比 -0.4%</div></div>
+<div class="tile"><div class="k">取引の数</div><div class="v">2 回</div><div class="s">勝率 50%</div></div>
+</div>
+<div class="card"><div class="small">資産の推移（グレーの横線が元手）。線の上をなぞると日付と金額が出ます。</div>
+<svg class="chart" viewBox="0 0 640 220" role="img" aria-label="資産の推移" data-chart="1" data-tip="tip-us" data-points='[[56.0, 70.3, &quot;2026-10-23&quot;, &quot;700.00 ドル&quot;], [246.7, 24.4, &quot;2026-10-26&quot;, &quot;704.13 ドル&quot;], [437.3, 103.9, &quot;2026-10-27&quot;, &quot;696.97 ドル&quot;], [628.0, 179.6, &quot;2026-10-28&quot;, &quot;690.16 ドル&quot;]]'><line class="grid" x1="56" y1="192.0" x2="628" y2="192.0"/><text x="50" y="196.0" text-anchor="end">689</text><line class="grid" x1="56" y1="132.0" x2="628" y2="132.0"/><text x="50" y="136.0" text-anchor="end">694</text><line class="grid" x1="56" y1="72.0" x2="628" y2="72.0"/><text x="50" y="76.0" text-anchor="end">700</text><line class="grid" x1="56" y1="12.0" x2="628" y2="12.0"/><text x="50" y="16.0" text-anchor="end">705</text><line class="base" x1="56" y1="70.3" x2="628" y2="70.3"/><text x="628" y="66.3" text-anchor="end">元手</text><path class="area" d="M56.0,70.3 L246.7,24.4 L437.3,103.9 L628.0,179.6 L628.0,192.0 L56.0,192.0 Z"/><path class="series" d="M56.0,70.3 L246.7,24.4 L437.3,103.9 L628.0,179.6"/><text x="56.0" y="212" text-anchor="start">10-23</text><text x="437.3" y="212" text-anchor="middle">10-27</text><text x="628.0" y="212" text-anchor="end">10-28</text><line class="cursor" x1="0" y1="12" x2="0" y2="192"/><circle class="dot" r="4" cx="0" cy="0"/></svg>
+<div class="tip" id="tip-us" data-default=""></div></div>
+<div class="card scroll"><button class="toggle" type="button" data-for="pos-us">くわしく（入った日・入った値・いまの値）</button><table class="pos" id="pos-us"><thead><tr><th class="l">銘柄</th><th class="l">物差し</th><th>株数</th><th class="x">入った日</th><th class="x">入った値</th><th class="x">いまの値</th><th>含み損益</th></tr></thead><tbody>
+<tr><td class="l">TSLA</td><td class="l"><span class="hz-s">中期</span><span class="hz-l">中期（5営業日）</span></td><td>1</td><td class="x">2026-10-28</td><td class="x">410.62 ドル</td><td class="x">404.22 ドル</td><td class="down">-6.40 ドル</td></tr>
+<tr><td class="l">NVDA</td><td class="l"><span class="hz-s">短期</span><span class="hz-l">短期（当日）</span></td><td>1</td><td class="x">2026-10-29（予定）</td><td class="x">—</td><td class="x">—</td><td class="pend" title="翌営業日の寄り付きで買う予約">予約中</td></tr>
+</tbody></table></div>
+<h2>直近の答え合わせ（機械学習 hgb・最新 20 件）</h2>
+<div class="card scroll"><table class="recent"><thead><tr><th class="l">月-日</th><th class="l">市場</th><th class="l">銘柄</th><th class="l">物差し</th><th>確率</th><th>実際</th><th class="l">当たり</th></tr></thead><tbody>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">3861.T</td><td class="l">短期</td><td>51%</td><td class="down">-2.19%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">4005.T</td><td class="l">短期</td><td>48%</td><td class="down">-0.86%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">4689.T</td><td class="l">短期</td><td>49%</td><td class="up">+0.34%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">4755.T</td><td class="l">短期</td><td>47%</td><td class="down">-0.85%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">4902.T</td><td class="l">短期</td><td>45%</td><td class="up">+0.04%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">6366.T</td><td class="l">短期</td><td>45%</td><td class="down">-2.24%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">6471.T</td><td class="l">短期</td><td>50%</td><td class="down">-0.53%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">6472.T</td><td class="l">短期</td><td>49%</td><td class="up">+0.84%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">6753.T</td><td class="l">短期</td><td>51%</td><td class="down">-2.87%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">7201.T</td><td class="l">短期</td><td>50%</td><td class="down">-1.06%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">7211.T</td><td class="l">短期</td><td>48%</td><td class="down">-2.22%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">9432.T</td><td class="l">短期</td><td>52%</td><td class="down">-0.81%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">9434.T</td><td class="l">短期</td><td>52%</td><td class="down">-1.16%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">日本株</td><td class="l">9501.T</td><td class="l">短期</td><td>48%</td><td class="down">-2.89%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">AAPL</td><td class="l">短期</td><td>34%</td><td class="down">-0.88%</td><td class="l up">当たり</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">AMZN</td><td class="l">短期</td><td>40%</td><td class="up">+0.65%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">BRK-B</td><td class="l">短期</td><td>53%</td><td class="down">-0.13%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">GOOGL</td><td class="l">短期</td><td>39%</td><td class="up">+0.32%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">JPM</td><td class="l">短期</td><td>48%</td><td class="up">+0.57%</td><td class="l down">外れ</td></tr>
+<tr><td class="l" title="2026-10-27">10-27</td><td class="l">米国株</td><td class="l">META</td><td class="l">短期</td><td>49%</td><td class="down">-1.47%</td><td class="l up">当たり</td></tr>
+</tbody></table></div>
+<details><summary>最後の実行</summary><ul class="small">
+<li>2026-10-29 07:31:21 score rows=12</li>
+<li>2026-10-29 07:31:21 predict n=288 reserved=1</li>
+<li>2026-10-29 07:31:20 settle filled=1 closed=0 settled=40</li>
+<li>2026-10-29 07:31:20 fetch rows=693 full= missing=</li>
+<li>2026-10-28 20:00:12 fetch rows=683 full= missing=</li>
+</ul></details>
+<footer>エム（もっぱらシリーズ）。この画面は読むだけです。鍵や口座の情報は載せていません。</footer>
+</main><script>
+(function(){
+  // 「くわしく」ボタン（成績表・持ち株）：隠した列を出す／戻す
+  var btns=document.querySelectorAll('button.toggle');
+  Array.prototype.forEach.call(btns,function(b){
+    var label=b.textContent;
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.getAttribute('data-for'));if(!t)return;
+      var open=t.classList.toggle('open');
+      b.textContent=open?'閉じる':label;
+    });
+  });
+  var charts=document.querySelectorAll('svg[data-chart]');
+  Array.prototype.forEach.call(charts,function(svg){
+    var pts=JSON.parse(svg.getAttribute('data-points')||'[]');
+    var tip=document.getElementById(svg.getAttribute('data-tip'));
+    var cur=svg.querySelector('.cursor'),dot=svg.querySelector('.dot');
+    if(!pts.length||!cur||!dot)return;
+    function show(evt){
+      var rect=svg.getBoundingClientRect();
+      var vb=svg.viewBox.baseVal;
+      var x=(evt.clientX-rect.left)*vb.width/rect.width;
+      var best=0,bd=1e9;
+      for(var i=0;i<pts.length;i++){var d=Math.abs(pts[i][0]-x);if(d<bd){bd=d;best=i;}}
+      var p=pts[best];
+      cur.setAttribute('x1',p[0]);cur.setAttribute('x2',p[0]);cur.style.display='block';
+      dot.setAttribute('cx',p[0]);dot.setAttribute('cy',p[1]);dot.style.display='block';
+      if(tip)tip.textContent=p[2]+'：'+p[3];
+    }
+    function hide(){cur.style.display='none';dot.style.display='none';if(tip)tip.textContent=tip.getAttribute('data-default')||'';}
+    svg.addEventListener('mousemove',show);svg.addEventListener('touchmove',function(e){show(e.touches[0]);},{passive:true});
+    svg.addEventListener('touchstart',function(e){show(e.touches[0]);},{passive:true});
+    svg.addEventListener('mouseleave',hide);svg.addEventListener('touchend',hide);
+  });
+})();
+</script></body></html>
