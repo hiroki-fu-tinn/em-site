@@ -1,6 +1,6 @@
 {
  "title": "エム（紙上運用）",
- "generated_at": "2026-10-29 07:31 JST",
+ "generated_at": "2026-10-30 16:10 JST",
  "notice": "ここにあるのは仮想のお金の成績です。予測は保証ではありません。",
  "demo_note": null,
  "markets": {
@@ -34,415 +34,415 @@
  "threshold": 0.55,
  "today": {
   "pred_date": {
-   "jp": "2026-10-28",
-   "us": "2026-10-28"
+   "jp": "2026-10-30",
+   "us": "2026-10-29"
   },
   "rows": [
    {
     "market": "jp",
     "ticker": "3861.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.44429724635818496,
+     "p_up": 0.43802501787302345,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5895833684241252,
+     "p_up": 0.5958815997159465,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5822121636076818,
+     "p_up": 0.6581928010562239,
      "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "4005.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.44216998893770554,
+     "p_up": 0.4981869268361486,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5545314898259375,
+     "p_up": 0.603881490976642,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5444824063341565,
-     "decided": "hold"
+     "p_up": 0.6054477134381605,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "4689.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.46174283511692343,
+     "p_up": 0.49167467469067044,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5829197109901666,
+     "p_up": 0.6518822366576356,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5761954945810838,
+     "p_up": 0.7442793209584392,
      "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "4755.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.42228280449163835,
+     "p_up": 0.42967780085286517,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5440569637818575,
-     "decided": "hold"
+     "p_up": 0.5958682869282554,
+     "decided": "buy"
     },
     "long": {
-     "p_up": 0.5431842121781459,
-     "decided": "hold"
+     "p_up": 0.6717598698326475,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "4902.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.44652856466269064,
+     "p_up": 0.4941191544366388,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.6037769436463878,
+     "p_up": 0.5653771697100375,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.49525297725088013,
-     "decided": "hold"
+     "p_up": 0.6524203799557777,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "6366.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.498572333379824,
+     "p_up": 0.48918398532210067,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5330329909368817,
-     "decided": "hold"
+     "p_up": 0.5506908827155294,
+     "decided": "buy"
     },
     "long": {
-     "p_up": 0.48771006361655367,
-     "decided": "hold"
+     "p_up": 0.6692765481329638,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "6471.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.42471778003205857,
+     "p_up": 0.47359024824744506,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5371348914955679,
-     "decided": "hold"
+     "p_up": 0.6311373392646475,
+     "decided": "buy"
     },
     "long": {
-     "p_up": 0.5027222908512364,
-     "decided": "hold"
+     "p_up": 0.6944102238567077,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "6472.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.4271739062563962,
+     "p_up": 0.4859556287024468,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5406491064559485,
-     "decided": "hold"
+     "p_up": 0.6316949560451859,
+     "decided": "buy"
     },
     "long": {
-     "p_up": 0.49986025162652,
-     "decided": "hold"
+     "p_up": 0.7348779941563516,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "6753.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.4479863534139185,
+     "p_up": 0.45941934072922963,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5716980615553044,
-     "decided": "buy"
+     "p_up": 0.4864153422882165,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.542298646750051,
-     "decided": "hold"
+     "p_up": 0.7387373294919078,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "7201.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.44184778839662436,
+     "p_up": 0.4525966000965786,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5573415359711296,
+     "p_up": 0.5935162645565241,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.36508132164334756,
-     "decided": "hold"
+     "p_up": 0.7869052786455458,
+     "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "7211.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.432272030296097,
+     "p_up": 0.45665240016460723,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5641638687835204,
+     "p_up": 0.6043134501763494,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5616203699999588,
+     "p_up": 0.7335829319032434,
      "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "9432.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.47017756644089737,
+     "p_up": 0.45868128879163317,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5683348935792624,
-     "decided": "buy"
+     "p_up": 0.5482923766405461,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.5743755081323015,
-     "decided": "buy"
+     "p_up": 0.3797961743296005,
+     "decided": "hold"
     }
    },
    {
     "market": "jp",
     "ticker": "9434.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.48364405257490223,
+     "p_up": 0.4863064974314171,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.6819022257298591,
+     "p_up": 0.620428689689795,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5814124792328789,
+     "p_up": 0.6849184684219627,
      "decided": "buy"
     }
    },
    {
     "market": "jp",
     "ticker": "9501.T",
-    "date": "2026-10-28",
+    "date": "2026-10-30",
     "short": {
-     "p_up": 0.4393047085523495,
+     "p_up": 0.3664010398323291,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5859588569508576,
-     "decided": "buy"
+     "p_up": 0.44605456430919427,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.5832782402825637,
+     "p_up": 0.7803109716638057,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "AAPL",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5535886416529537,
-     "decided": "buy"
+     "p_up": 0.5490783709727093,
+     "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5610965987126753,
-     "decided": "buy"
+     "p_up": 0.5338386294054555,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.5487353991556255,
-     "decided": "hold"
+     "p_up": 0.5811532282502772,
+     "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "AMZN",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5779890714531174,
-     "decided": "buy"
+     "p_up": 0.5212395529716675,
+     "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5650551137915841,
-     "decided": "buy"
+     "p_up": 0.5476972011561128,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.519857846503449,
-     "decided": "hold"
+     "p_up": 0.612340334619939,
+     "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "BRK-B",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.6063834743500433,
-     "decided": "buy"
+     "p_up": 0.49107639430036676,
+     "decided": "hold"
     },
     "mid": {
-     "p_up": 0.4491251355090135,
+     "p_up": 0.5268149221374263,
      "decided": "hold"
     },
     "long": {
-     "p_up": 0.5615196115940063,
+     "p_up": 0.6194834388734101,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "GOOGL",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5758019472457139,
-     "decided": "buy"
+     "p_up": 0.4035804013976758,
+     "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5882979531955673,
+     "p_up": 0.7981657610282061,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.5953198897913693,
+     "p_up": 0.8407498898478606,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "JPM",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5265107080328401,
+     "p_up": 0.4937270340186267,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5168177325509927,
+     "p_up": 0.37405916307341286,
      "decided": "hold"
     },
     "long": {
-     "p_up": 0.6886633448436719,
+     "p_up": 0.581757863893129,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "META",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.648058469445171,
+     "p_up": 0.5704464326353317,
      "decided": "buy"
     },
     "mid": {
-     "p_up": 0.6252864014739067,
+     "p_up": 0.5657017022373172,
      "decided": "buy"
     },
     "long": {
-     "p_up": 0.6676256288630272,
+     "p_up": 0.6991010981331851,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "MSFT",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.4349213371635245,
+     "p_up": 0.438813772277273,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.5684239006177917,
-     "decided": "buy"
+     "p_up": 0.5190208231896231,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.5571957713280681,
+     "p_up": 0.5501987056729665,
      "decided": "buy"
     }
    },
    {
     "market": "us",
     "ticker": "NVDA",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.6013502901974315,
-     "decided": "buy"
+     "p_up": 0.5429029063220144,
+     "decided": "hold"
     },
     "mid": {
-     "p_up": 0.6011628001998606,
-     "decided": "buy"
+     "p_up": 0.5320719824880707,
+     "decided": "hold"
     },
     "long": {
-     "p_up": 0.5588186285273635,
-     "decided": "buy"
+     "p_up": 0.5327918984078094,
+     "decided": "hold"
     }
    },
    {
     "market": "us",
     "ticker": "TSLA",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5290565663524699,
+     "p_up": 0.47572315019223765,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.46733787793565545,
+     "p_up": 0.5333584334073408,
      "decided": "hold"
     },
     "long": {
-     "p_up": 0.4188590273286174,
+     "p_up": 0.4625033615235304,
      "decided": "hold"
     }
    },
    {
     "market": "us",
     "ticker": "XOM",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "short": {
-     "p_up": 0.5209626131543968,
+     "p_up": 0.45107385571188047,
      "decided": "hold"
     },
     "mid": {
-     "p_up": 0.504314855076388,
+     "p_up": 0.4328816544571143,
      "decided": "hold"
     },
     "long": {
-     "p_up": 0.5435014204048656,
+     "p_up": 0.5125656943060009,
      "decided": "hold"
     }
    }
@@ -451,63 +451,123 @@
  "scores": [
   {
    "market": "jp",
-   "horizon": "short",
+   "horizon": "mid",
    "model": "base_rate",
-   "n": 43,
-   "hit_rate": 0.6744186046511628,
-   "brier": 0.24460016467400683,
-   "base_rate": 0.32558139534883723,
+   "n": 15,
+   "hit_rate": 0.3333333333333333,
+   "brier": 0.25423754883928,
+   "base_rate": 0.3333333333333333,
    "trade_n": 0,
    "trade_hit": null,
    "avg_trade_ret": null,
    "paper_pnl_pct": null,
-   "index_ret": 0.016633086831449262,
+   "index_ret": 0.006076659637327841,
+   "verdict": "まだ数が足りない（n<30）"
+  },
+  {
+   "market": "jp",
+   "horizon": "mid",
+   "model": "hgb",
+   "n": 15,
+   "hit_rate": 0.4,
+   "brier": 0.261330124201288,
+   "base_rate": 0.3333333333333333,
+   "trade_n": 6,
+   "trade_hit": 0.5,
+   "avg_trade_ret": -0.018474061153388826,
+   "paper_pnl_pct": 0.9906924438476609,
+   "index_ret": 0.006076659637327841,
+   "verdict": "まだ数が足りない（n<30）"
+  },
+  {
+   "market": "jp",
+   "horizon": "mid",
+   "model": "mean_reversion",
+   "n": 15,
+   "hit_rate": 0.4666666666666667,
+   "brier": 0.26666666666666666,
+   "base_rate": 0.3333333333333333,
+   "trade_n": 13,
+   "trade_hit": 0.38461538461538464,
+   "avg_trade_ret": -0.017555938444406102,
+   "paper_pnl_pct": null,
+   "index_ret": 0.006076659637327841,
+   "verdict": "まだ数が足りない（n<30）"
+  },
+  {
+   "market": "jp",
+   "horizon": "mid",
+   "model": "momentum",
+   "n": 15,
+   "hit_rate": 0.5333333333333333,
+   "brier": 0.25333333333333335,
+   "base_rate": 0.3333333333333333,
+   "trade_n": 2,
+   "trade_hit": 0.0,
+   "avg_trade_ret": -0.03529153192370599,
+   "paper_pnl_pct": null,
+   "index_ret": 0.006076659637327841,
+   "verdict": "まだ数が足りない（n<30）"
+  },
+  {
+   "market": "jp",
+   "horizon": "short",
+   "model": "base_rate",
+   "n": 71,
+   "hit_rate": 0.6619718309859155,
+   "brier": 0.24501380535701106,
+   "base_rate": 0.3380281690140845,
+   "trade_n": 0,
+   "trade_hit": null,
+   "avg_trade_ret": null,
+   "paper_pnl_pct": null,
+   "index_ret": 0.006076659637327841,
    "verdict": "これが基準"
   },
   {
    "market": "jp",
    "horizon": "short",
    "model": "hgb",
-   "n": 43,
-   "hit_rate": 0.5348837209302325,
-   "brier": 0.24274011744313756,
-   "base_rate": 0.32558139534883723,
+   "n": 71,
+   "hit_rate": 0.5633802816901409,
+   "brier": 0.24515916720292402,
+   "base_rate": 0.3380281690140845,
    "trade_n": 1,
    "trade_hit": 0.0,
    "avg_trade_ret": -0.034787425949377226,
    "paper_pnl_pct": null,
-   "index_ret": 0.016633086831449262,
+   "index_ret": 0.006076659637327841,
    "verdict": "基準と変わらない"
   },
   {
    "market": "jp",
    "horizon": "short",
    "model": "mean_reversion",
-   "n": 43,
-   "hit_rate": 0.3953488372093023,
-   "brier": 0.2809302325581395,
-   "base_rate": 0.32558139534883723,
-   "trade_n": 38,
-   "trade_hit": 0.34210526315789475,
-   "avg_trade_ret": -0.004407854645912003,
+   "n": 71,
+   "hit_rate": 0.49295774647887325,
+   "brier": 0.26140845070422536,
+   "base_rate": 0.3380281690140845,
+   "trade_n": 58,
+   "trade_hit": 0.39655172413793105,
+   "avg_trade_ret": -0.0029992665151782854,
    "paper_pnl_pct": null,
-   "index_ret": 0.016633086831449262,
+   "index_ret": 0.006076659637327841,
    "verdict": "基準に負けている"
   },
   {
    "market": "jp",
    "horizon": "short",
    "model": "momentum",
-   "n": 43,
-   "hit_rate": 0.6046511627906976,
-   "brier": 0.23906976744186048,
-   "base_rate": 0.32558139534883723,
-   "trade_n": 5,
-   "trade_hit": 0.2,
-   "avg_trade_ret": -0.012493111219533115,
+   "n": 71,
+   "hit_rate": 0.5070422535211268,
+   "brier": 0.25859154929577466,
+   "base_rate": 0.3380281690140845,
+   "trade_n": 13,
+   "trade_hit": 0.07692307692307693,
+   "avg_trade_ret": -0.01265510939424559,
    "paper_pnl_pct": null,
-   "index_ret": 0.016633086831449262,
-   "verdict": "基準と変わらない"
+   "index_ret": 0.006076659637327841,
+   "verdict": "基準に負けている"
   },
   {
    "market": "us",
@@ -521,7 +581,7 @@
    "trade_hit": 0.5,
    "avg_trade_ret": -0.01004143530453987,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "まだ数が足りない（n<30）"
   },
   {
@@ -536,7 +596,7 @@
    "trade_hit": 0.3333333333333333,
    "avg_trade_ret": -0.019805125089509212,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "まだ数が足りない（n<30）"
   },
   {
@@ -551,7 +611,7 @@
    "trade_hit": 0.5,
    "avg_trade_ret": -0.01311345137381322,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "まだ数が足りない（n<30）"
   },
   {
@@ -566,67 +626,67 @@
    "trade_hit": 0.5,
    "avg_trade_ret": -0.005433411200629845,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "まだ数が足りない（n<30）"
   },
   {
    "market": "us",
    "horizon": "short",
    "model": "base_rate",
-   "n": 40,
-   "hit_rate": 0.5,
-   "brier": 0.2503544578572222,
-   "base_rate": 0.5,
+   "n": 50,
+   "hit_rate": 0.44,
+   "brier": 0.25255623046869835,
+   "base_rate": 0.44,
    "trade_n": 0,
    "trade_hit": null,
    "avg_trade_ret": null,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "これが基準"
   },
   {
    "market": "us",
    "horizon": "short",
    "model": "hgb",
-   "n": 40,
-   "hit_rate": 0.55,
-   "brier": 0.2603467548311088,
-   "base_rate": 0.5,
-   "trade_n": 7,
-   "trade_hit": 0.42857142857142855,
-   "avg_trade_ret": 0.0010687079855955992,
-   "paper_pnl_pct": -0.43265253669083753,
-   "index_ret": 0.00407259278889982,
+   "n": 50,
+   "hit_rate": 0.5,
+   "brier": 0.26305556863291796,
+   "base_rate": 0.44,
+   "trade_n": 13,
+   "trade_hit": 0.38461538461538464,
+   "avg_trade_ret": -0.0012276260442347726,
+   "paper_pnl_pct": -0.6535129868251134,
+   "index_ret": 0.0010139697504512046,
    "verdict": "基準と変わらない"
   },
   {
    "market": "us",
    "horizon": "short",
    "model": "mean_reversion",
-   "n": 40,
-   "hit_rate": 0.525,
-   "brier": 0.255,
-   "base_rate": 0.5,
-   "trade_n": 21,
-   "trade_hit": 0.5238095238095238,
-   "avg_trade_ret": 0.0014241473715916092,
+   "n": 50,
+   "hit_rate": 0.54,
+   "brier": 0.252,
+   "base_rate": 0.44,
+   "trade_n": 27,
+   "trade_hit": 0.48148148148148145,
+   "avg_trade_ret": -0.00022403463557604293,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "基準と変わらない"
   },
   {
    "market": "us",
    "horizon": "short",
    "model": "momentum",
-   "n": 40,
-   "hit_rate": 0.475,
-   "brier": 0.265,
-   "base_rate": 0.5,
-   "trade_n": 19,
-   "trade_hit": 0.47368421052631576,
-   "avg_trade_ret": 0.0006095656112000691,
+   "n": 50,
+   "hit_rate": 0.46,
+   "brier": 0.26799999999999996,
+   "base_rate": 0.44,
+   "trade_n": 23,
+   "trade_hit": 0.391304347826087,
+   "avg_trade_ret": -0.0002737073828962749,
    "paper_pnl_pct": null,
-   "index_ret": 0.00407259278889982,
+   "index_ret": 0.0010139697504512046,
    "verdict": "基準と変わらない"
   }
  ],
@@ -635,25 +695,30 @@
    "name": "日本株",
    "currency": "JPY",
    "start_cash": 100000.0,
-   "cash": 840.9424438476708,
-   "holdings_value": 102450.0,
-   "equity": 103290.94244384767,
-   "realized_pnl": 0.0,
-   "paper_pnl_pct": 0.0,
-   "trade_n": 0,
-   "win_rate": null,
-   "holdings": [
+   "cash": 100990.69244384767,
+   "holdings_value": 0.0,
+   "equity": 100990.69244384767,
+   "realized_pnl": 990.6924438476608,
+   "paper_pnl_pct": 0.9906924438476609,
+   "trade_n": 1,
+   "win_rate": 1.0,
+   "holdings": [],
+   "pending": [
     {
-     "ticker": "6471.T",
+     "ticker": "4689.T",
      "horizon": "mid",
      "qty": 100,
-     "entry_date": "2026-10-26",
-     "entry_price": 991.5905755615233,
-     "last_close": 1024.5,
-     "unrealized": 3290.9424438476663
+     "entry_date": "2026-11-02",
+     "p_up": 0.6518822366576356
+    },
+    {
+     "ticker": "6472.T",
+     "horizon": "mid",
+     "qty": 100,
+     "entry_date": "2026-11-02",
+     "p_up": 0.6316949560451859
     }
    ],
-   "pending": [],
    "curve": [
     {
      "date": "2026-10-23",
@@ -670,6 +735,14 @@
     {
      "date": "2026-10-28",
      "equity": 103290.94244384767
+    },
+    {
+     "date": "2026-10-29",
+     "equity": 103890.94244384767
+    },
+    {
+     "date": "2026-10-30",
+     "equity": 100990.69244384767
     }
    ]
   },
@@ -677,13 +750,13 @@
    "name": "米国株",
    "currency": "USD",
    "start_cash": 700.0,
-   "cash": 285.94061059518435,
-   "holdings_value": 404.2200012207031,
-   "equity": 690.1606118158875,
-   "realized_pnl": -3.028567756835863,
-   "paper_pnl_pct": -0.43265253669083753,
-   "trade_n": 2,
-   "win_rate": 0.5,
+   "cash": 284.3945874442444,
+   "holdings_value": 403.29998779296875,
+   "equity": 687.6945752372131,
+   "realized_pnl": -4.574590907775794,
+   "paper_pnl_pct": -0.6535129868251134,
+   "trade_n": 3,
+   "win_rate": 0.3333333333333333,
    "holdings": [
     {
      "ticker": "TSLA",
@@ -691,8 +764,8 @@
      "qty": 1,
      "entry_date": "2026-10-28",
      "entry_price": 410.62020144653314,
-     "last_close": 404.2200012207031,
-     "unrealized": -6.4002002258300195
+     "last_close": 403.29998779296875,
+     "unrealized": -7.3202136535643945
     }
    ],
    "pending": [
@@ -700,8 +773,8 @@
      "ticker": "NVDA",
      "horizon": "short",
      "qty": 1,
-     "entry_date": "2026-10-29",
-     "p_up": 0.6013502901974315
+     "entry_date": "2026-10-30",
+     "p_up": 0.5429029063220144
     }
    ],
    "curve": [
@@ -720,262 +793,266 @@
     {
      "date": "2026-10-28",
      "equity": 690.1606118158875
+    },
+    {
+     "date": "2026-10-29",
+     "equity": 687.6945752372131
     }
    ]
   }
  },
  "recent": [
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "3861.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.50631910587684,
-   "outcome_ret": -0.021870439970860023,
-   "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5251685443087937,
+   "outcome_ret": 0.009629614559220734,
+   "outcome_up": 1,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "4005.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.4837494438489162,
-   "outcome_ret": -0.008595947565933737,
+   "p_up": 0.5148456873447964,
+   "outcome_ret": -0.014133617049374436,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "4689.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.4943759517307641,
-   "outcome_ret": 0.0033932379381860223,
-   "outcome_up": 1,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5337216367847548,
+   "outcome_ret": -0.0019920318725099584,
+   "outcome_up": 0,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "4755.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.4695455397358255,
-   "outcome_ret": -0.008516773094862984,
-   "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5007407929745756,
+   "outcome_ret": 0.021286927309452697,
+   "outcome_up": 1,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "4902.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.45488868327522647,
-   "outcome_ret": 0.0004361555659972982,
-   "outcome_up": 1,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.49660774993570406,
+   "outcome_ret": -0.009090872706315256,
+   "outcome_up": 0,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "6366.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.449868525274569,
-   "outcome_ret": -0.022399999999999975,
+   "p_up": 0.495945397467503,
+   "outcome_ret": -0.02006688963210701,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "6471.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.5013153191353003,
-   "outcome_ret": -0.005339805825242738,
+   "p_up": 0.49476859847033233,
+   "outcome_ret": -0.02195121951219514,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "6472.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.48789173516924433,
-   "outcome_ret": 0.008428510620997143,
-   "outcome_up": 1,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5062227338143218,
+   "outcome_ret": -0.0291970477728396,
+   "outcome_up": 0,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "6753.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.5131951416164314,
-   "outcome_ret": -0.028694179049881918,
+   "p_up": 0.5186530632267167,
+   "outcome_ret": -0.027075812274368283,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "7201.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.49622639756516673,
-   "outcome_ret": -0.01055813793990712,
+   "p_up": 0.4958940314840109,
+   "outcome_ret": -0.004850700720032686,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "7211.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.47508088827254413,
-   "outcome_ret": -0.02220943736925285,
+   "p_up": 0.5071227301580933,
+   "outcome_ret": -0.00203137607264281,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "9432.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.5174148237497873,
-   "outcome_ret": -0.008078529316905447,
-   "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5262702884175728,
+   "outcome_ret": 0.0034742681767125916,
+   "outcome_up": 1,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "9434.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.5158548298252081,
-   "outcome_ret": -0.011568110620601257,
-   "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "p_up": 0.5364106255835713,
+   "outcome_ret": 0.0021394951070998758,
+   "outcome_up": 1,
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
+   "pred_date": "2026-10-29",
    "market": "jp",
    "ticker": "9501.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.47827183523501826,
-   "outcome_ret": -0.028901733400828467,
+   "p_up": 0.4948926819907778,
+   "outcome_ret": -0.04121562873548912,
    "outcome_up": 0,
-   "settled_at": "2026-10-28 17:12:54"
+   "settled_at": "2026-10-30 16:10:12"
   },
   {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "AAPL",
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "3861.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.33836909414918936,
-   "outcome_ret": -0.00880701992693056,
-   "outcome_up": 0,
-   "settled_at": "2026-10-29 07:31:20"
-  },
-  {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "AMZN",
-   "horizon": "short",
-   "model": "hgb",
-   "p_up": 0.4000059666930641,
-   "outcome_ret": 0.0064832358717616945,
+   "p_up": 0.44429724635818496,
+   "outcome_ret": 0.00012357921623928902,
    "outcome_up": 1,
-   "settled_at": "2026-10-29 07:31:20"
+   "settled_at": "2026-10-29 16:10:10"
   },
   {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "BRK-B",
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "4005.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.5262534608234848,
-   "outcome_ret": -0.0013214291153227364,
+   "p_up": 0.44216998893770554,
+   "outcome_ret": -0.007179508046207261,
    "outcome_up": 0,
-   "settled_at": "2026-10-29 07:31:20"
+   "settled_at": "2026-10-29 16:10:10"
   },
   {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "GOOGL",
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "4689.T",
    "horizon": "short",
    "model": "hgb",
-   "p_up": 0.3852430416616655,
-   "outcome_ret": 0.0032423984758549462,
-   "outcome_up": 1,
-   "settled_at": "2026-10-29 07:31:20"
-  },
-  {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "JPM",
-   "horizon": "short",
-   "model": "hgb",
-   "p_up": 0.4794629066229071,
-   "outcome_ret": 0.005690861587435148,
-   "outcome_up": 1,
-   "settled_at": "2026-10-29 07:31:20"
-  },
-  {
-   "pred_date": "2026-10-27",
-   "market": "us",
-   "ticker": "META",
-   "horizon": "short",
-   "model": "hgb",
-   "p_up": 0.4937151306476039,
-   "outcome_ret": -0.014719168969901664,
+   "p_up": 0.46174283511692343,
+   "outcome_ret": -0.0026036207185083926,
    "outcome_up": 0,
-   "settled_at": "2026-10-29 07:31:20"
+   "settled_at": "2026-10-29 16:10:10"
+  },
+  {
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "4755.T",
+   "horizon": "short",
+   "model": "hgb",
+   "p_up": 0.42228280449163835,
+   "outcome_ret": 0.0,
+   "outcome_up": 0,
+   "settled_at": "2026-10-29 16:10:10"
+  },
+  {
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "4902.T",
+   "horizon": "short",
+   "model": "hgb",
+   "p_up": 0.44652856466269064,
+   "outcome_ret": -0.005698457444389238,
+   "outcome_up": 0,
+   "settled_at": "2026-10-29 16:10:10"
+  },
+  {
+   "pred_date": "2026-10-28",
+   "market": "jp",
+   "ticker": "6366.T",
+   "horizon": "short",
+   "model": "hgb",
+   "p_up": 0.498572333379824,
+   "outcome_ret": -0.0016420361247947435,
+   "outcome_up": 0,
+   "settled_at": "2026-10-29 16:10:10"
   }
  ],
  "runs": [
   {
-   "id": 75,
-   "at": "2026-10-29 07:31:21",
+   "id": 101,
+   "at": "2026-10-30 16:10:14",
    "command": "score",
-   "note": "rows=12"
+   "note": "rows=16"
   },
   {
-   "id": 74,
-   "at": "2026-10-29 07:31:21",
+   "id": 100,
+   "at": "2026-10-30 16:10:14",
    "command": "predict",
-   "note": "n=288 reserved=1"
+   "note": "n=288 reserved=2"
   },
   {
-   "id": 73,
-   "at": "2026-10-29 07:31:20",
+   "id": 99,
+   "at": "2026-10-30 16:10:12",
    "command": "settle",
-   "note": "filled=1 closed=0 settled=40"
+   "note": "filled=0 closed=1 settled=112"
   },
   {
-   "id": 72,
-   "at": "2026-10-29 07:31:20",
+   "id": 98,
+   "at": "2026-10-30 16:10:12",
    "command": "fetch",
-   "note": "rows=693 full= missing="
+   "note": "rows=709 full= missing="
   },
   {
-   "id": 71,
-   "at": "2026-10-28 20:00:12",
-   "command": "fetch",
-   "note": "rows=683 full= missing="
+   "id": 97,
+   "at": "2026-10-30 08:34:30",
+   "command": "schedule",
+   "note": "install"
   }
  ]
 }
