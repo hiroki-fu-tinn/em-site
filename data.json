@@ -1,6 +1,6 @@
 {
  "title": "エム（紙上運用）",
- "generated_at": "2026-11-16 16:13 JST",
+ "generated_at": "2026-11-16 20:12 JST",
  "notice": "ここにあるのは仮想のお金の成績です。予測は保証ではありません。",
  "demo_note": null,
  "markets": {
@@ -1114,34 +1114,34 @@
  ],
  "runs": [
   {
-   "id": 268,
-   "at": "2026-11-16 16:13:53",
+   "id": 275,
+   "at": "2026-11-16 20:12:18",
    "command": "score",
    "note": "rows=16"
   },
   {
-   "id": 267,
-   "at": "2026-11-16 16:13:53",
+   "id": 274,
+   "at": "2026-11-16 20:12:18",
    "command": "predict",
    "note": "n=288 reserved=0"
   },
   {
-   "id": 266,
-   "at": "2026-11-16 16:13:52",
+   "id": 273,
+   "at": "2026-11-16 20:12:18",
    "command": "settle",
-   "note": "filled=0 closed=0 settled=112"
+   "note": "filled=0 closed=0 settled=0"
   },
   {
-   "id": 265,
-   "at": "2026-11-16 16:13:52",
+   "id": 272,
+   "at": "2026-11-16 20:12:18",
    "command": "fetch",
-   "note": "rows=765 full= missing="
+   "note": "rows=713 full= missing="
   },
   {
-   "id": 264,
-   "at": "2026-11-14 07:47:37",
+   "id": 271,
+   "at": "2026-11-16 16:21:01",
    "command": "run",
-   "note": "ok jp=2026-11-13 us=2026-11-13"
+   "note": "失敗: 画面の公開（publish）に失敗しました"
   }
  ]
 }
